@@ -1,7 +1,7 @@
 // All your DOM manipulation must happen here.
 // You will create and inject all elements into <main id="root"> using JavaScript only.
 const root = document.getElementById('root');
-root.style.width = '50%';
+root.style.width = '400px';
 root.style.height = '100%';
 root.style.display = 'flex';
 root.style.flexDirection = 'column';
@@ -12,11 +12,14 @@ root.style.lineHeight = '40px';
 root.style.fontFamily = 'Arial, sans-serif';
 root.style.gap = "20px";
 root.style.padding = '20px'; 
+root.style.backgroundColor = '#B2B0E8';
+root.style.borderRadius = '10px';
+root.style.border = '2px solid #7A85C1'
 
 const label = document.createElement('label');
 label.textContent = 'Task: ';
 label.style.cssText = `
-    ont-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
 `;
@@ -29,6 +32,7 @@ input.style.cssText = `
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    border: 2px solid #7A85C1
 `;
 
 const button = document.createElement('button');
@@ -36,7 +40,7 @@ button.textContent = 'ADD TASK';
 button.style.cssText = `
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #28a745;
+    background-color: #3B38A0;
     color: white;
     border: none;
     border-radius: 4px;
@@ -83,6 +87,15 @@ function createTask(taskText) {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'DELETE';
+    deleteButton.style.cssText = `
+        padding: 5px 10px;
+        font-size: 14px;
+        background-color: #3B38A0;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    `;
     deleteButton.addEventListener('click', () => {
         ul.removeChild(li);
         updateCounter();
